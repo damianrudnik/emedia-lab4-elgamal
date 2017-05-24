@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "cmath": "cpp",
+        "sstream": "cpp",
+        "iostream": "cpp",
+        "fstream": "cpp",
+        "system_error": "cpp",
+        "*.tcc": "cpp",
+        "ostream": "cpp"
+    }
+}
