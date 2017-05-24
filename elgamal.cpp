@@ -175,7 +175,6 @@ int main(){
 
                 cipher ciph;
                 while (!v_bimsg.empty()){// i tutaj kazda z liczb wektora v_bimsg szyfruje
-                    //tempbi = cryptodecrypt(v_bimsg.back(),bipublickey,bin);
                     encrypt(ciph, v_bimsg.back(), publiczny);
                     v_bicrypted.emplace_back(ciph);
                     v_bimsg.pop_back();
@@ -188,16 +187,12 @@ int main(){
                 //WriteToFile("out.txt",crypted);
                 cout << "crypt done" << endl;
                 showtime();
-
-                //cout << "## Zaszyfrowana wiadomosc: ";
-                //wys_wbi(v_bicrypted);
                 break;
             }
             case '3':{
                 intime();
                 //deszyfrowanie
                 bi xored2, tempbi3, bisciagniety;
-
                 while (!v_bicrypted.empty()){// sciagam po kolei elementy wektora zaszyfrowanego - najpierw xor z poprzednim, nastepnie deszyfracja
                     decrypt(tempbi3, v_bicrypted.back(), sekret);
                     v_bicrypted.pop_back();
@@ -210,7 +205,7 @@ int main(){
             }
             case 'x':
                 cout << "Bye." << endl;
-                //gmp_randclear(r_state);
+                //gmp_randclear(r_state);// clearing variables is not working idk why
                 /*mpz_clear(testbi.get_mpz_t());
                 mpz_clear(bipublickey.get_mpz_t());
                 mpz_clear(biprivatekey.get_mpz_t());
@@ -440,7 +435,6 @@ bool WriteToFile(string filename, string phrase){
         return false;
     }
 }
-
 
 bool WriteToBinFile(string filename, string phrase){
     int length = phrase.length();
